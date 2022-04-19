@@ -1,16 +1,15 @@
 part of 'chats_bloc.dart';
 
 abstract class ChatsState extends Equatable {
-  final int numberOfGroups;
-  ChatsState(this.numberOfGroups);
+  ChatsState();
 }
 
 class ChatsInitial extends ChatsState {
-
-  ChatsInitial(int numberOfGroups) : super(numberOfGroups) ;
+  final int numberOfGroups;
+  ChatsInitial(this.numberOfGroups)  ;
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [numberOfGroups];
 }
 
 // class ChatsLoading extends ChatsState {
@@ -20,7 +19,8 @@ class ChatsInitial extends ChatsState {
 //   List<Object> get props => [];
 // }
 class ChatsSuccess extends ChatsState {
-  ChatsSuccess(int numberOfGroups) : super(numberOfGroups);
+  final int numberOfGroups;
+  ChatsSuccess(this.numberOfGroups);
 
   @override
   List<Object?> get props => [numberOfGroups];
